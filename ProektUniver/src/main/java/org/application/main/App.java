@@ -25,8 +25,8 @@ public class App {
             LogManager.getLogManager().readConfiguration(App.class.getResourceAsStream("/logging.properties"));
 
             // Читаем файлы
-            List<Student> students = ExcelReader.readStudentsFromExcel("data.xlsx");
-            List<University> universities = ExcelReader.readUniversitiesFromExcel("data.xlsx");
+            List<Student> students = ExcelReader.readStudentsFromExcel("src/main/resources/universityInfo.xlsx");
+            List<University> universities = ExcelReader.readUniversitiesFromExcel("src/main/resources/universityInfo.xlsx");
 
             // Обработка статистики
             CollectionUtil collectionUtil = new CollectionUtil();
@@ -52,4 +52,5 @@ public class App {
             logger.log(Level.SEVERE, "Ошибка при чтении/записи файла", e);
         }
     }
+
 }
